@@ -29,5 +29,7 @@ get_template_part('partials/seo');
 <section id="main-container">
 
   <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+    <?php wp_nav_menu( array(
+      'menu' => 'main'
+    ) ) ?>
   </header>

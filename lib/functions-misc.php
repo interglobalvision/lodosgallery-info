@@ -52,6 +52,6 @@ add_action( 'login_head', 'custom_login_logo' );
 
 // WP Nav Menu
 function register_igv_nav_menu() {
-  register_nav_menu('header-menu',__( 'Header Menu' ));
+  register_nav_menu('main',__( 'Main Menu' ));
 }
 add_action( 'init', 'register_igv_nav_menu' );
