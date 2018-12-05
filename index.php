@@ -13,21 +13,18 @@ if (have_posts()) {
     the_post();
 ?>
 
-        <article <?php post_class('grid-item item-s-12'); ?> id="post-<?php the_ID(); ?>">
+        <article <?php post_class('grid-item item-s-12 item-m-4'); ?> id="post-<?php the_ID(); ?>">
 
-          <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-
-          <?php the_content(); ?>
+          <a href="<?php the_permalink() ?>">
+            <?php the_title(); ?>
+          </a>
 
         </article>
 
 <?php
   }
-} else {
+}
 ?>
-        <article class="u-alert grid-item item-s-12"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
-<?php
-} ?>
 
       </div>
     </div>
