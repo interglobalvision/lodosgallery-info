@@ -39,6 +39,9 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
    */
 
+
+  // HOME
+
   $home_page = get_page_by_path('home');
 
   if (!empty($home_page) ) {
@@ -57,6 +60,148 @@ function igv_cmb_metaboxes() {
     ) );
 
   }
+
+  // EXHIBITION
+
+  $exhibition_metabox = new_cmb2_box( array(
+ 		'id'            => $prefix . 'exhibition_metabox',
+ 		'title'         => esc_html__( 'Details', 'cmb2' ),
+ 		'object_types'  => array( 'exhibition', 'fair' ), // Post type
+ 	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Start Date', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_start',
+		'type' => 'text_date_timestamp',
+	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'End Date', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_end',
+		'type' => 'text_date_timestamp',
+	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Exhibition title', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_title',
+		'type' => 'text',
+	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Artist(s)', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_artist',
+		'type' => 'text',
+    'repeatable' => true,
+	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Group show', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_group',
+		'type' => 'checkbox',
+	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Press Release PDF English', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_pdf',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+    'text'    => array(
+  		'add_upload_file_text' => 'Add PDF'
+  	),
+  	// query_args are passed to wp.media's library query.
+  	'query_args' => array(
+  		'type' => 'application/pdf', // Make library only display PDFs.
+  	),
+	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Press Release PDF Español', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_pdf_es',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+    'text'    => array(
+  		'add_upload_file_text' => 'Add PDF'
+  	),
+  	// query_args are passed to wp.media's library query.
+  	'query_args' => array(
+  		'type' => 'application/pdf', // Make library only display PDFs.
+  	),
+	) );
+
+  $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Home image', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_home_image',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+  	// query_args are passed to wp.media's library query.
+  	'query_args' => array(
+  		'type' => array(
+  		 	'image/gif',
+  		 	'image/jpeg',
+  		 	'image/png',
+  		),
+  	),
+	) );
+
+  // DOCUMENTATION
+
+  $documentation_metabox = new_cmb2_box( array(
+ 		'id'            => $prefix . 'documentation_metabox',
+ 		'title'         => esc_html__( 'Documentation', 'cmb2' ),
+ 		'object_types'  => array( 'exhibition', 'fair', 'publication' ), // Post type
+ 	) );
+
+  $documentation_images_group = $documentation_metabox->add_field( array(
+		'id'          => $prefix . 'documentation_group',
+		'type'        => 'group',
+		'options'     => array(
+			'group_title'   => esc_html__( 'Image {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'    => esc_html__( 'Add Another Image', 'cmb2' ),
+			'remove_button' => esc_html__( 'Remove Image', 'cmb2' ),
+			'sortable'      => true, // beta
+		),
+	) );
+
+  $documentation_metabox->add_group_field( $documentation_images_group, array(
+		'name' => esc_html__( 'Image', 'cmb2' ),
+		'id'   => 'image',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+    'query_args' => array(
+  		'type' => array(
+  		 	'image/gif',
+  		 	'image/jpeg',
+  		 	'image/png',
+  		),
+  	),
+	) );
+
+  $documentation_metabox->add_group_field( $documentation_images_group, array(
+		'name' => esc_html__( 'Vimeo ID', 'cmb2' ),
+		'id'   => 'vimeo_id',
+		'type' => 'text_small',
+	) );
+
+  $documentation_metabox->add_group_field( $documentation_images_group, array(
+		'name' => esc_html__( 'Caption', 'cmb2' ),
+		'id'   => 'caption',
+		'type' => 'wysiwyg',
+    'options' => array(
+	    'wpautop' => false, // use wpautop?
+	    'media_buttons' => false, // show insert/upload button(s)
+	    'textarea_rows' => 1, // rows="..."
+	    'teeny' => true, // output the minimal editor config used in Press This
+	    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+  	),
+	) );
 
 }
 ?>
