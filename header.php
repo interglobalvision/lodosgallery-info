@@ -28,7 +28,7 @@ get_template_part('partials/seo');
 
 <section id="main-container">
 
-  <header id="header" class="container">
+  <header id="header" class="container padding-top-small padding-bottom-small">
   <?php
     wp_nav_menu( array(
       'menu' => 'main'
