@@ -101,8 +101,14 @@ function igv_cmb_metaboxes() {
 	) );
 
   $exhibition_metabox->add_field( array(
+		'name' => esc_html__( 'Dates', 'cmb2' ),
+		'id'   => $prefix . 'exhibition_dates',
+		'type' => 'text',
+	) );
+
+  $exhibition_metabox->add_field( array(
 		'name' => esc_html__( 'Press Release PDF English', 'cmb2' ),
-		'id'   => $prefix . 'exhibition_pdf',
+		'id'   => $prefix . 'exhibition_pdf_en',
 		'type' => 'file',
     'options' => array(
   		'url' => false, // Hide the text input for the url
