@@ -29,7 +29,10 @@ get_template_part('partials/seo');
 <section id="main-container">
 
   <header id="header">
-    <?php wp_nav_menu( array(
+  <?php
+    wp_nav_menu( array(
       'menu' => 'main'
-    ) ) ?>
+    ) );
+    echo qtranxf_generateLanguageSelectCode('text');
+  ?>
   </header>
