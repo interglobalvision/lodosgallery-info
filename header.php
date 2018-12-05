@@ -28,11 +28,18 @@ get_template_part('partials/seo');
 
 <section id="main-container">
 
-  <header id="header" class="container padding-top-small padding-bottom-small">
-  <?php
-    wp_nav_menu( array(
-      'menu' => 'main'
-    ) );
-    echo qtranxf_generateLanguageSelectCode('text');
-  ?>
+  <header id="header">
+    <div class="container padding-top-small padding-bottom-mid grid-row">
+      <div class="grid-item">
+        <?php
+          wp_nav_menu( array(
+            'menu' => 'main'
+          ) );
+        ?>
+        <div id="subscribe-holder">
+          <span>Subscribe</span>
+        </div>
+        <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
+      </div>
+    </div>
   </header>
