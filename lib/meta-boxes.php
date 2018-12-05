@@ -39,5 +39,24 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
    */
 
+  $home_page = get_page_by_path('home');
+
+  if (!empty($home_page) ) {
+
+    $home_metabox = new_cmb2_box( array(
+      'id'            => $prefix . 'home_metabox',
+      'title'         => esc_html__( 'Options', 'cmb2' ),
+      'object_types'  => array( 'page' ), // Post type
+      'show_on'      => array( 'key' => 'id', 'value' => array($home_page->ID) ),
+    ) );
+
+    $home_metabox->add_field( array(
+      'name' => esc_html__( 'Default image', 'cmb2' ),
+      'id'   => $prefix . 'home_image',
+      'type' => 'file',
+    ) );
+
+  }
+
 }
 ?>
