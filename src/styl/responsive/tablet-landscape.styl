@@ -1,6 +1,6 @@
 @media screen and (min-width: 1024px)
 
-  $gutter = 24px
+  $gutter = 28px
 
   $margin-micro = ($gutter / 3)
   $margin-tiny = ($gutter / 2)
@@ -11,7 +11,7 @@
 
   $font-size-basic = 16px
 
-  grid-maker(1000px, $gutter, l)
+  grid-maker(96%, $gutter, l)
 
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
@@ -23,6 +23,13 @@
   .menu-main-container,
   .language-chooser
     display: inline-block
+    font-size: 0
     li
       display: inline-block
       margin-right: $margin-tiny
+      font-size: $font-size-small
+
+  #subscribe-holder
+    display: inline-block
+    margin-right: $margin-tiny
+    font-size: $font-size-small
