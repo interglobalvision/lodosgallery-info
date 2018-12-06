@@ -70,7 +70,7 @@ if (have_posts()) {
                 <?php the_post_thumbnail('archive-thumb'); ?>
                 <?php
                   if (!empty($artists) || !empty($title)) {
-                    echo '<h3>';
+                    echo '<h3 class="font-size-basic">';
                     if (!empty($group)) {
                       echo !empty($title) ? $title . '<br>' : '';
                       list_artists($artists);
@@ -147,7 +147,7 @@ if (have_posts()) {
                 <?php the_post_thumbnail('archive-thumb'); ?>
                 <?php
                   if (!empty($artists) || !empty($title)) {
-                    echo '<h3>';
+                    echo '<h3 class="font-size-basic">';
                     if (!empty($group)) {
                       echo !empty($title) ? $title . '<br>' : '';
                       list_artists($artists);
@@ -234,7 +234,7 @@ if (have_posts()) {
                   <?php the_post_thumbnail('archive-thumb'); ?>
                   <?php
                     if (!empty($artists) || !empty($title)) {
-                      echo '<h3>';
+                      echo '<h3 class="font-size-basic">';
                       if (!empty($group)) {
                         echo !empty($title) ? $title . '<br>' : '';
                         list_artists($artists);
