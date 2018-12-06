@@ -72,12 +72,12 @@ if (have_posts()) {
                   if (!empty($artists) || !empty($title)) {
                     echo '<h3 class="font-size-basic">';
                     if (!empty($group)) {
-                      echo !empty($title) ? $title . '<br>' : '';
+                      echo !empty($title) ? '<em>' . $title . '</em>' . '<br>' : '';
                       list_artists($artists);
                     } else {
                       list_artists($artists);
                       echo !empty($artists) ? '<br>' : '';
-                      echo !empty($title) ? $title : '';
+                      echo !empty($title) ? '<em>' . $title . '</em>' : '';
                     }
                     echo '</h3>';
 
@@ -149,12 +149,12 @@ if (have_posts()) {
                   if (!empty($artists) || !empty($title)) {
                     echo '<h3 class="font-size-basic">';
                     if (!empty($group)) {
-                      echo !empty($title) ? $title . '<br>' : '';
+                      echo !empty($title) ? '<em>' . $title . '</em>' . '<br>' : '';
                       list_artists($artists);
                     } else {
                       list_artists($artists);
                       echo !empty($artists) ? '<br>' : '';
-                      echo !empty($title) ? $title : '';
+                      echo !empty($title) ? '<em>' . $title . '</em>' : '';
                     }
                     echo '</h3>';
 
@@ -236,12 +236,12 @@ if (have_posts()) {
                     if (!empty($artists) || !empty($title)) {
                       echo '<h3 class="font-size-basic">';
                       if (!empty($group)) {
-                        echo !empty($title) ? $title . '<br>' : '';
+                        echo !empty($title) ? '<em>' . $title . '</em>' . '<br>' : '';
                         list_artists($artists);
                       } else {
                         list_artists($artists);
                         echo !empty($artists) ? '<br>' : '';
-                        echo !empty($title) ? $title : '';
+                        echo !empty($title) ? '<em>' . $title . '</em>' : '';
                       }
                       echo '</h3>';
 
