@@ -8,14 +8,112 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $font-size-basic = 12px
-$font-size-extra = 48px
-$font-size-large = 36px
-$font-size-mid = 24px
-$font-size-small = 18px
-$font-size-tiny = 8px
+$font-size-extra = 16px
+$font-size-large = 16px
+$font-size-mid = 16px
+$font-size-small = 12px
+$font-size-tiny = 12px
 
 grid-maker(96%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
 font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
+
+$header-height = 95px
+
+.menu-main-container
+  display: inline-block
+  li
+    margin-right: $margin-tiny
+    display: inline-block
+    &.current-menu-item
+      text-decoration: underline
+    &.menu-item-home
+      display: block
+      &.current-menu-item
+        text-decoration: none
+
+.language-chooser,
+#subscribe-holder
+  display: block
+
+.language-chooser
+  margin-right: $margin-tiny
+  li
+    display: inline-block
+    &.active
+      text-decoration: underline
+
+button[type="submit"]
+  visibility: hidden
+  pointer-events: none
+  width: 0
+  transition: width 200ms
+  padding: 0
+  appearance: none
+  border: none
+  display: none
+  background: $color-white
+
+input
+  padding: 0
+  border: 0
+  width: 54px
+  transition: width 200ms
+  cursor: pointer
+  appearance: none
+  background: $color-white
+  &::placeholder
+    color: $color-black
+  &:focus
+    width: 125px
+    outline: none
+    border-bottom: 1px solid $color-black
+    cursor: text
+    &::placeholder
+      color: transparent
+  &:focus + button
+    visibility: visible
+    pointer-events: auto
+    width: 50px
+    display: inline-block
+
+#home-text-holder,
+#home-image-holder
+  position: absolute
+  z-index: 1
+  top: $header-height
+  left: 0
+  right: 0
+  margin-left: auto
+  margin-right: auto
+  height: calc('100vh - ' + ($header-height * 2))
+
+#home-text-holder
+  a
+    display: inline-block
+    overflow: visible
+    will-change: transform
+    white-space: nowrap
+    transform-origin: center left
+    transition: font-size .5s, -webkit-text-stroke .5s
+    backface-visibility: hidden
+    //-webkit-text-stroke: 0px $color-black
+    &:hover
+      font-size: 40px
+      //-webkit-text-stroke: 50px $color-black
+
+#home-image-holder
+  z-index: 0
+  filter: saturate(0)
+  img
+    max-width: 80%
+    max-height: 80%
+    width: auto
+    height: auto
+
+#single-header,
+#single-content,
+#page-content
+  max-width: 400px

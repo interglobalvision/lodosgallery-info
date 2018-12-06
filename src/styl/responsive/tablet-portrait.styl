@@ -9,13 +9,40 @@
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
 
-  $font-size-basic = 14px
-
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
   grid-maker(96%, $gutter, m)
 
-  font-sizes($font-size-basic)
+  $header-height = 124px
 
   .mobile-only
     display: none !important
+
+  .menu-main-container,
+  .language-chooser
+    display: inline-block
+    font-size: 0
+    li
+      display: inline-block
+      margin-right: $margin-tiny
+      font-size: $font-size-basic
+      &.menu-item-home
+        display: inline-block
+
+  #subscribe-holder
+    display: inline-block
+    margin-right: $margin-tiny
+    font-size: $font-size-basic
+
+  #home-text-holder,
+  #home-image-holder
+    top: $header-height
+    height: calc('100vh - ' + ($header-height * 2))
+    img
+      max-width: 400px
+      max-height: 400px
+
+  #home-text-holder
+    a
+      &:hover
+        font-size: 56px

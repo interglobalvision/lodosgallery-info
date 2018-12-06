@@ -9,6 +9,18 @@
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
 
-  grid-maker(90%, $gutter, l)
+  grid-maker(96%, $gutter, l)
 
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
+
+  $header-height = 142px
+
+  #home-text-holder,
+  #home-image-holder
+    top: $header-height
+    height: calc('100vh - ' + ($header-height * 2))
+
+  #home-text-holder
+    a
+      &:hover
+        font-size: 90px
