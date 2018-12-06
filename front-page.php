@@ -4,7 +4,7 @@ get_header();
 
 <main id="main-content">
   <section id="posts">
-    <div class="container">
+
 
 <?php
 $home_image = null;
@@ -55,7 +55,7 @@ if (have_posts()) {
         if (!empty($artists) || !empty($title)) {
           $group = get_post_meta($post->ID, '_igv_exhibition_group', true);
 
-          echo '<h2>';
+          echo '<div id="home-text-holder" class="container grid-row align-items-center"><h2 class="grid-item font-size-basic"><a href="' . get_the_permalink() . '">';
           if (!empty($group)) {
             echo !empty($title) ? $title . '<br>' : '';
             list_artists($artists);
@@ -64,7 +64,7 @@ if (have_posts()) {
             echo !empty($artists) ? '<br>' : '';
             echo !empty($title) ? $title : '';
           }
-          echo '</h2>';
+          echo '</a></h2></div>';
         }
 
         $exhibition_image = get_post_meta($post->ID, '_igv_exhibition_home_image_id', true);
@@ -79,10 +79,8 @@ if (have_posts()) {
     wp_reset_postdata();
 ?>
 
-  <div>
-  <?php
-    echo $home_image !== null ? wp_get_attachment_image($home_image, 'full') : '';
-  ?>
+  <div id="home-image-holder" class="container grid-row align-items-center justify-center">
+    <?php echo $home_image !== null ? wp_get_attachment_image($home_image, 'full') : ''; ?>
   </div>
 
 <?php
@@ -90,7 +88,6 @@ if (have_posts()) {
 }
 ?>
 
-    </div>
   </section>
 </main>
 
