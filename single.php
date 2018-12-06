@@ -30,19 +30,19 @@ if (have_posts()) {
                 echo '<h1 class="font-size-basic">';
                 if (!empty($group)) {
                   echo !empty($title) ? $title . '<br>' : '';
-                  list_artists($artists);
+                  list_artists($artists, true);
                 } else {
-                  list_artists($artists);
+                  list_artists($artists, true);
                   echo !empty($artists) ? '<br>' : '';
                   echo !empty($title) ? $title : '';
                 }
                 echo '</h1>';
               }
 
-              echo !empty($dates) ? '<div><span>' . $dates . '</span></div>' : '';
+              echo !empty($dates) ? '<div class="margin-top-tiny"><span>' . $dates . '</span></div>' : '';
 
               if (!empty($pdf)) {
-                echo '<div><a href="' . $pdf . '" class="link-underline">';
+                echo '<div class="margin-top-tiny"><a href="' . $pdf . '" class="link-underline">';
                 _e('[:en]Press Release[:es]Comunicado de prensa[:]');
                 echo '</a></div>';
               }
