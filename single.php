@@ -24,10 +24,10 @@ if (have_posts()) {
 ?>
       <article <?php post_class('grid-row justify-center margin-bottom-mid'); ?> id="post-<?php the_ID(); ?>">
         <div class="grid-item item-s-12 item-m-10 item-l-8">
-          <header>
+          <header id="single-header">
             <?php
               if (!empty($artists) || !empty($title)) {
-                echo '<h1>';
+                echo '<h1 class="font-size-basic">';
                 if (!empty($group)) {
                   echo !empty($title) ? $title . '<br>' : '';
                   list_artists($artists);
@@ -49,7 +49,7 @@ if (have_posts()) {
             ?>
           </header>
           <?php
-            echo !empty($content) ? '<div class="margin-top-small">' . $content . '</div>' : '';
+            echo !empty($content) ? '<div id="single-content" class="margin-top-small">' . $content . '</div>' : '';
 
             if (!empty($documentation)) {
           ?>
