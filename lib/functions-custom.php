@@ -11,10 +11,8 @@ function list_artists($artists, $single = false) {
       echo 'group show';
     } else {
       foreach ($artists as $artist) {
-        echo '<span>';
         echo $artist;
         echo $a < $artist_count ? ', ' : '';
-        echo '</span>';
         $a++;
       }
     }
