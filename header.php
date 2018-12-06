@@ -30,14 +30,16 @@ get_template_part('partials/seo');
 
   <header id="header">
     <div class="container padding-top-small padding-bottom-mid grid-row">
-      <div class="grid-item">
+      <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+      <div id="header-menu" class="grid-item">
         <?php
           wp_nav_menu( array(
             'menu' => 'main'
           ) );
         ?>
         <div id="subscribe-holder">
-          <span>Subscribe</span>
+          <input type="text" placeholder="Subscribe">
+          <button type="submit">Submit</button>
         </div>
         <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
       </div>
