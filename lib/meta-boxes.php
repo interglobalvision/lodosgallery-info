@@ -104,6 +104,9 @@ function igv_cmb_metaboxes() {
 		'name' => esc_html__( 'Dates', 'cmb2' ),
 		'id'   => $prefix . 'exhibition_dates',
 		'type' => 'text',
+    'attributes' => array(
+      'data-cmb2-qtranslate' => true,
+    ),
 	) );
 
   $exhibition_metabox->add_field( array(
