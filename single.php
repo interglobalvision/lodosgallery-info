@@ -28,14 +28,9 @@ if (have_posts()) {
             <?php
               if (!empty($artists) || !empty($title)) {
                 echo '<h1 class="font-size-basic">';
-                if (!empty($group)) {
-                  echo !empty($title) ? '<em>' . $title . '</em>' . '<br>' : '';
-                  list_artists($artists, true);
-                } else {
-                  list_artists($artists, true);
-                  echo !empty($artists) ? '<br>' : '';
-                  echo !empty($title) ? '<em>' . $title . '</em>': '';
-                }
+                echo !empty($title) ? '<em>' . $title . '</em>': '';
+                echo !empty($title) && !empty($artists) ? '<br>' : '';
+                list_artists($artists, true);
                 echo '</h1>';
               }
 
