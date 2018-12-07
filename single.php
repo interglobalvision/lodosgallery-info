@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main id="main-content">
+<main id="main-content" class="padding-top-mid">
   <section id="<?php echo get_post_type(); ?>">
     <div class="container">
 

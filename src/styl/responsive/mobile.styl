@@ -22,6 +22,13 @@ font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid,
 
 $header-height = 95px
 
+#header
+  position: fixed
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 800
+
 .menu-main-container
   display: inline-block
   li
@@ -54,7 +61,7 @@ button[type="submit"]
   appearance: none
   border: none
   display: none
-  background: $color-white
+  background: transparent
 
 input
   padding: 0
@@ -63,7 +70,7 @@ input
   transition: width 200ms
   cursor: pointer
   appearance: none
-  background: $color-white
+  background: transparent
   &::placeholder
     color: $color-black
 

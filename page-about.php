@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main id="main-content">
+<main id="main-content" class="padding-top-mid">
   <section id="page">
     <div class="container">
 
@@ -24,13 +24,20 @@ if (have_posts()) {
             <?php the_content(); ?>
           </div>
           <?php
-            if (!empty($email) || !empty($phone) || !empty($hours)) {
+            if (!empty($email) || !empty($phone) || !empty($hours) || !empty($address)) {
           ?>
           <div class="grid-item item-s-12 item-m-4 item-l-3 margin-bottom-basic">
             <?php
+              if (!empty($address)) {
+                echo '<div class="margin-bottom-tiny">';
+                echo !empty($map_link) ? '<a href="' . $map_link . '">' : '';
+                echo apply_filters('the_content', $address);
+                echo !empty($map_link) ? '</a>' : '';
+                echo '</div>';
+              }
+              echo !empty($hours) ? '<div class="margin-bottom-tiny">' . apply_filters('the_content', $hours) . '</div>' : '';
               echo !empty($email) ? '<div class="margin-bottom-tiny"><a href="mailto:' . $email . '">' . $email . '</a></div>' : '' ;
               echo !empty($phone) ? '<div class="margin-bottom-tiny"><a href="tel:' . $phone . '">' . $phone . '</a></div>' : '' ;
-              echo !empty($hours) ? apply_filters('the_content', $hours) : '';
             ?>
           </div>
           <?php
@@ -38,20 +45,8 @@ if (have_posts()) {
 
             if (!empty($map_embed)) {
           ?>
-          <div class="grid-item item-s-12 item-m-4 offset-l-2 margin-bottom-basic" id="map-holder">
+          <div class="grid-item item-s-12 item-m-8 item-l-6 margin-bottom-basic" id="map-holder">
             <?php echo $map_embed; ?>
-          </div>
-          <?php
-            }
-
-            if (!empty($address)) {
-          ?>
-          <div class="grid-item item-s-12 item-m-4 item-l-3 margin-bottom-basic">
-          <?php
-            echo !empty($map_link) ? '<a href="' . $map_link . '">' : '';
-            echo apply_filters('the_content', $address);
-            echo !empty($map_link) ? '</a>' : '';
-          ?>
           </div>
           <?php
             }
