@@ -37,11 +37,13 @@ get_template_part('partials/seo');
             'menu' => 'main'
           ) );
         ?>
-        <div id="subscribe-holder">
-          <input type="text" placeholder="Subscribe">
-          <button type="submit">Submit</button>
-        </div>
+        <form id="mailchimp-form" novalidate="true">
+          <input id="mailchimp-email" type="email" name="EMAIL" placeholder="Subscribe">
+          <button id="mailchimp-submit" type="submit">Submit</button>
+        </form>
         <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
       </div>
     </div>
   </header>
+
+  <div id="mailchimp-response"></div>
