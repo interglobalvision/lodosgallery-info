@@ -269,14 +269,10 @@ function igv_cmb_metaboxes() {
     $about_metabox->add_field( array(
   		'name' => esc_html__( 'Additional', 'cmb2' ),
   		'id'   => $prefix . 'about_etc',
-  		'type' => 'wysiwyg',
-      'options' => array(
-  	    'wpautop' => false, // use wpautop?
-  	    'media_buttons' => false, // show insert/upload button(s)
-  	    'textarea_rows' => 1, // rows="..."
-  	    'teeny' => true, // output the minimal editor config used in Press This
-  	    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
-    	),
+  		'type' => 'textarea',
+      'attributes' => array(
+        'data-cmb2-qtranslate' => true,
+      ),
   	) );
   }
 
