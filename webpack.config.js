@@ -61,7 +61,7 @@ module.exports = {
 	},
 
 	plugins: [
-		new ExtractTextPlugin('../css/site.css'),
+		new ExtractTextPlugin('../css/site2.css'),
 		// Copy the images folder and optimize all the images
 		new CopyWebpackPlugin([
 			{
