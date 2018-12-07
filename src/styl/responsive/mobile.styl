@@ -20,8 +20,6 @@ space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-m
 
 font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
 
-$header-height = 95px
-
 #header
   position: fixed
   width: 100%
@@ -92,12 +90,12 @@ input
 #home-image-holder
   position: absolute
   z-index: 1
-  top: $header-height
+  top: 0
   left: 0
   right: 0
   margin-left: auto
   margin-right: auto
-  height: calc('100vh - ' + ($header-height * 2))
+  height: 100vh
 
 #home-text-holder
   a
