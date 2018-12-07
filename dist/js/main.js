@@ -940,6 +940,7 @@ var Mailchimp = function () {
     value: function closeForm() {
       if (this.$form.hasClass('active')) {
         this.$form.removeClass('active');
+        this.$email.val('');
       }
     }
   }, {
@@ -993,7 +994,6 @@ var Mailchimp = function () {
       if (response.result === 'success') {
 
         this.closeForm();
-        this.$email.val('');
 
         // Success message
         msg = successMsg;
@@ -1033,7 +1033,6 @@ var Mailchimp = function () {
 
       if (this.alreadySubscribed(msg)) {
         this.closeForm();
-        this.$email.val('');
 
         msg = successMsg;
 

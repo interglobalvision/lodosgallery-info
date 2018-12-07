@@ -46,6 +46,7 @@ class Mailchimp {
   closeForm() {
     if (this.$form.hasClass('active')) {
       this.$form.removeClass('active');
+      this.$email.val('');
     }
   }
 
@@ -94,7 +95,6 @@ class Mailchimp {
     if (response.result === 'success') {
 
       this.closeForm();
-      this.$email.val('');
 
       // Success message
       msg = successMsg;
@@ -136,7 +136,6 @@ class Mailchimp {
 
     if (this.alreadySubscribed(msg)) {
       this.closeForm();
-      this.$email.val('');
 
       msg = successMsg;
 
