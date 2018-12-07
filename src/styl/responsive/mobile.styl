@@ -121,11 +121,5 @@ input
   max-width: 400px
 
 #mailchimp-response
-  position: fixed
-  background: $color-white
-  border: 1px solid $color-black
-  width: 200px
-  height: 200px
-  top: calc('50vh - 100px')
-  left: calc('50vw - 100px')
-  z-index: 200
+  &.error
+    color: red

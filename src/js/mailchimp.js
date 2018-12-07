@@ -89,6 +89,7 @@ class Mailchimp {
   */
   successMessage(response) {
     let msg = '';
+    let successMsg = WP.lang === 'en' ? 'You\'ve been successfully subscribed' : 'Has sido suscrito exitosamente';
 
     if (response.result === 'success') {
 
@@ -96,7 +97,7 @@ class Mailchimp {
       this.$email.val('');
 
       // Success message
-      msg = 'You\'ve been successfully subscribed';
+      msg = successMsg;
 
       // Set class .valid on form elements
       this.$reply.removeClass('error').addClass('valid');
@@ -133,8 +134,24 @@ class Mailchimp {
       }
     }
 
+    if (this.alreadySubscribed(msg)) {
+      this.closeForm();
+      this.$email.val('');
+
+      msg = successMsg;
+
+      // Set class .valid on form elements
+      this.$reply.removeClass('error').addClass('valid');
+      this.$email.removeClass('error').addClass('valid');
+    }
+
     // Show message
     this.$reply.html(msg);
+  }
+
+  alreadySubscribed(msg) {
+    let substring = "already subscribed";
+    return msg.indexOf(substring) !== -1;
   }
 }
 

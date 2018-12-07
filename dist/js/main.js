@@ -988,6 +988,7 @@ var Mailchimp = function () {
     key: 'successMessage',
     value: function successMessage(response) {
       var msg = '';
+      var successMsg = WP.lang === 'en' ? 'You\'ve been successfully subscribed' : 'Has sido suscrito exitosamente';
 
       if (response.result === 'success') {
 
@@ -995,7 +996,7 @@ var Mailchimp = function () {
         this.$email.val('');
 
         // Success message
-        msg = 'You\'ve been successfully subscribed';
+        msg = successMsg;
 
         // Set class .valid on form elements
         this.$reply.removeClass('error').addClass('valid');
@@ -1030,8 +1031,25 @@ var Mailchimp = function () {
         }
       }
 
+      if (this.alreadySubscribed(msg)) {
+        this.closeForm();
+        this.$email.val('');
+
+        msg = successMsg;
+
+        // Set class .valid on form elements
+        this.$reply.removeClass('error').addClass('valid');
+        this.$email.removeClass('error').addClass('valid');
+      }
+
       // Show message
       this.$reply.html(msg);
+    }
+  }, {
+    key: 'alreadySubscribed',
+    value: function alreadySubscribed(msg) {
+      var substring = "already subscribed";
+      return msg.indexOf(substring) !== -1;
     }
   }]);
 

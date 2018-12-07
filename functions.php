@@ -15,6 +15,7 @@ function scripts_and_styles_method() {
     'siteUrl' => home_url(),
     'themeUrl' => get_template_directory_uri(),
     'isAdmin' => $is_admin,
+    'lang' => qtranxf_getLanguage(),
     'mailchimp' => !empty($site_options['_igv_mailchimp_url']) ? $site_options['_igv_mailchimp_url'] : null,
   );
 

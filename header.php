@@ -29,21 +29,22 @@ get_template_part('partials/seo');
 <section id="main-container">
 
   <header id="header">
-    <div class="container padding-top-small padding-bottom-mid grid-row">
-      <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
-      <div id="header-menu" class="grid-item">
-        <?php
-          wp_nav_menu( array(
-            'menu' => 'main'
-          ) );
-        ?>
-        <form id="mailchimp-form" novalidate="true">
-          <input id="mailchimp-email" type="email" name="EMAIL" placeholder="Subscribe">
-          <button id="mailchimp-submit" type="submit">Submit</button>
-        </form>
-        <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
+    <div class="container padding-top-small padding-bottom-mid grid-row justify-between">
+      <div class="grid-row">
+        <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+        <div id="header-menu" class="grid-item">
+          <?php
+            wp_nav_menu( array(
+              'menu' => 'main'
+            ) );
+          ?>
+          <form id="mailchimp-form" novalidate="true">
+            <input id="mailchimp-email" type="email" name="EMAIL" placeholder="Subscribe">
+            <button id="mailchimp-submit" type="submit">Submit</button>
+          </form>
+          <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
+        </div>
       </div>
+      <div id="mailchimp-response" class="grid-item"></div>
     </div>
   </header>
-
-  <div id="mailchimp-response"></div>
