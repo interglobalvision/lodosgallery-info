@@ -20,13 +20,6 @@ space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-m
 
 font-sizes($font-size-basic, $font-size-extra, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny)
 
-#header
-  position: fixed
-  width: 100%
-  top: 0
-  left: 0
-  z-index: 800
-
 .menu-main-container
   display: inline-block
   li
@@ -60,6 +53,7 @@ button[type="submit"]
   border: none
   display: none
   background: transparent
+  font-family: $font-sans
   &:focus,
   &:active
     outline: none
@@ -72,10 +66,12 @@ input
   cursor: pointer
   appearance: none
   background: transparent
+  font-family: $font-sans
   &:focus
     outline: none
   &::placeholder
     color: $color-black
+    font-family: $font-sans
 
 #mailchimp-form.active
   input
@@ -131,6 +127,7 @@ input
   max-width: 400px
 
 #mailchimp-response
+  flex-basis: 100%
   &.error
     color: red
 
