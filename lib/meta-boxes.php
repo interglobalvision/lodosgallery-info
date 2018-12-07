@@ -212,5 +212,60 @@ function igv_cmb_metaboxes() {
   	),
 	) );
 
+  // ABOUT
+
+  $about_page = get_page_by_path('about');
+
+  if (!empty($about_page) ) {
+    $cmb_about = new_cmb2_box( array(
+      'id'            => $prefix . 'about_metabox',
+      'title'         => esc_html__( 'Details', 'cmb2' ),
+      'object_types'  => array( 'page' ), // Post type
+      'show_on'      => array( 'key' => 'id', 'value' => array($about_page->ID) ),
+    ) );
+
+    $cmb_about->add_field( array(
+      'name' => esc_html__( 'Email', 'cmb2' ),
+      'id'   => $prefix . 'about_email',
+      'type' => 'text_email',
+    ) );
+
+    $cmb_about->add_field( array(
+      'name' => esc_html__( 'Phone', 'cmb2' ),
+      'id'   => $prefix . 'about_phone',
+      'type' => 'text',
+    ) );
+
+    $cmb_about->add_field( array(
+      'name' => esc_html__( 'Hours', 'cmb2' ),
+      'id'   => $prefix . 'about_hours',
+      'type' => 'textarea_small',
+      'attributes' => array(
+        'data-cmb2-qtranslate' => true,
+      ),
+    ) );
+
+    $cmb_about->add_field( array(
+      'name' => esc_html__( 'Address', 'cmb2' ),
+      'id'   => $prefix . 'about_address',
+      'type' => 'textarea_small',
+      'attributes' => array(
+        'data-cmb2-qtranslate' => true,
+      ),
+    ) );
+
+    $cmb_about->add_field( array(
+      'name' => esc_html__( 'Google map link', 'cmb2' ),
+      'id'   => $prefix . 'about_map_link',
+      'type' => 'text_url',
+    ) );
+
+    $cmb_about->add_field( array(
+      'name' => esc_html__( 'Google map embed', 'cmb2' ),
+      'id'   => $prefix . 'about_map_embed',
+      'type' => 'textarea_code',
+    ) );
+  }
+
 }
 ?>
