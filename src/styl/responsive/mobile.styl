@@ -60,6 +60,9 @@ button[type="submit"]
   border: none
   display: none
   background: transparent
+  &:focus,
+  &:active
+    outline: none
 
 input
   padding: 0
@@ -69,6 +72,8 @@ input
   cursor: pointer
   appearance: none
   background: transparent
+  &:focus
+    outline: none
   &::placeholder
     color: $color-black
 
