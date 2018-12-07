@@ -35,7 +35,7 @@ $header-height = 95px
         text-decoration: none
 
 .language-chooser,
-#subscribe-holder
+#mailchimp-form
   display: block
 
 .language-chooser
@@ -66,14 +66,16 @@ input
   background: $color-white
   &::placeholder
     color: $color-black
-  &:focus
+
+#mailchimp-form.active
+  input
     width: 125px
     outline: none
     border-bottom: 1px solid $color-black
     cursor: text
     &::placeholder
       color: transparent
-  &:focus + button
+  button[type="submit"]
     visibility: visible
     pointer-events: auto
     width: 50px
@@ -117,3 +119,13 @@ input
 #single-content,
 #page-content
   max-width: 400px
+
+#mailchimp-response
+  position: fixed
+  background: $color-white
+  border: 1px solid $color-black
+  width: 200px
+  height: 200px
+  top: calc('50vh - 100px')
+  left: calc('50vw - 100px')
+  z-index: 200

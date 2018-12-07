@@ -9,6 +9,8 @@ class Mailchimp {
     this.onReady = this.onReady.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.successMessage = this.successMessage.bind(this);
+    this.openForm = this.openForm.bind(this);
+    this.closeForm = this.closeForm.bind(this);
 
     $(window).on('ajaxSuccess', this.onReady); // Bind ajaxSuccess (custom event, comes from Ajaxy)
 
@@ -18,16 +20,38 @@ class Mailchimp {
   onReady() {
     this.$form = $('#mailchimp-form');
 
-    if (this.$form.length && WP.mailchimp !== null) {
+    if (WP.mailchimp === null) {
+      this.$form.remove();
+    } else if (this.$form.length && WP.mailchimp !== null) {
       this.$email = $('#mailchimp-email');
       this.$reply = $('#mailchimp-response');
+
+      this.bindFormToggle();
 
       // Bind form submit event
       this.$form.submit(this.submitForm);
     }
   }
 
-  submitForm() {
+  bindFormToggle() {
+    this.$form.on('click', this.openForm);
+    $(window).on('click', this.closeForm);
+  }
+
+  openForm(e) {
+    e.stopPropagation();
+    this.$form.addClass('active');
+  }
+
+  closeForm() {
+    if (this.$form.hasClass('active')) {
+      this.$form.removeClass('active');
+    }
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+
     let data = {};
 
     // Get form data
@@ -67,6 +91,9 @@ class Mailchimp {
     let msg = '';
 
     if (response.result === 'success') {
+
+      this.closeForm();
+      this.$email.val('');
 
       // Success message
       msg = 'You\'ve been successfully subscribed';
