@@ -45,6 +45,6 @@ get_template_part('partials/seo');
           <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
         </div>
       </div>
-      <div id="mailchimp-response" class="grid-item"></div>
+      <div id="mailchimp-response" class="grid-item">&nbsp;</div>
     </div>
   </header>
