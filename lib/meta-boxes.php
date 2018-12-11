@@ -275,10 +275,13 @@ function igv_cmb_metaboxes() {
     $about_metabox->add_field( array(
   		'name' => esc_html__( 'Additional', 'cmb2' ),
   		'id'   => $prefix . 'about_etc',
-  		'type' => 'textarea',
-      'attributes' => array(
-        'data-cmb2-qtranslate' => true,
-      ),
+  		'type' => 'wysiwyg',
+      'options' => array(
+  	    'wpautop' => false, // use wpautop?
+  	    'media_buttons' => false, // show insert/upload button(s)
+  	    'textarea_rows' => 5, // rows="..."
+        'editor_class' => 'cmb2-qtranslate',
+    	),
   	) );
   }
 
