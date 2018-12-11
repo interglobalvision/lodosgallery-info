@@ -102,7 +102,7 @@ if (have_posts()) {
   $args = array(
     'post_type' => array('fair'),
     'nopaging' => true,
-    'order' => 'DESC',
+    'order' => 'ASC',
     'orderby' => 'meta_value_num',
     'meta_key' => '_igv_exhibition_start',
     'meta_query' => array(
