@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main id="main-content" class="padding-top-mid margin-bottom-mid">
+<main id="main-content" class="padding-top-mid">
   <section id="<?php echo get_post_type(); ?>">
     <div class="container">
 
@@ -22,7 +22,7 @@ if (have_posts()) {
 
     $documentation = get_post_meta($post->ID, '_igv_documentation_group', true);
 ?>
-      <article <?php post_class('grid-row justify-center margin-bottom-mid'); ?> id="post-<?php the_ID(); ?>">
+      <article <?php post_class('grid-row justify-center'); ?> id="post-<?php the_ID(); ?>">
         <div class="grid-item item-s-12 item-m-10 item-l-8">
           <header id="single-header">
             <?php
@@ -47,11 +47,15 @@ if (have_posts()) {
             echo !empty($content) ? '<div id="single-content" class="margin-top-small">' . $content . '</div>' : '';
 
             if (!empty($documentation)) {
+              $total = count($documentation);
+              $count = 1;
           ?>
           <div id="documentation" class="margin-top-basic">
             <?php
               foreach ($documentation as $item) {
-                echo '<div class="documentation-item margin-bottom-small">';
+                echo '<div class="documentation-item margin-bottom-mid ';
+                echo $count < $total ? 'documentation-next' : 'documentation-top';
+                echo '">';
 
                 if (!empty($item['image_id'])) {
                   echo wp_get_attachment_image($item['image_id'], 'documentation');
@@ -63,6 +67,8 @@ if (have_posts()) {
                 echo !empty($item['caption']) ? '<div class="documentation-caption">' . apply_filters('the_caption', $item['caption']) . '</div>' : '';
 
                 echo '</div>';
+
+                $count++;
               }
             ?>
           </div>
