@@ -53,13 +53,13 @@ if (have_posts()) {
 
         $artists = get_post_meta($post->ID, '_igv_exhibition_artist', true);
         $title = get_post_meta($post->ID, '_igv_exhibition_title', true);
-
+        $dates = get_post_meta($post->ID, '_igv_exhibition_dates', true);
         $home_link = get_the_permalink();
 
         if (!empty($artists) || !empty($title)) {
           $group = get_post_meta($post->ID, '_igv_exhibition_group', true);
 
-          echo '<div id="home-text-holder" class="container grid-row align-items-center"><h2 class="grid-item font-size-basic"><a href="' . $home_link . '" class="home-link">';
+          echo '<div id="home-text-holder" class="container grid-row align-items-center"><a href="' . $home_link . '" class="home-link grid-item font-size-basic"><h2>';
           if (!empty($group)) {
             echo !empty($title) ? $title . '<br>' : '';
             list_artists($artists);
@@ -68,7 +68,9 @@ if (have_posts()) {
             echo !empty($artists) ? '<br>' : '';
             echo !empty($title) ? $title : '';
           }
-          echo '</a></h2></div>';
+          echo '</h2>';
+          echo !empty($dates) ? '<div><span>' . $dates . '</span></div>' : '';
+          echo '</a></div>';
         }
 
         $exhibition_image = get_post_meta($post->ID, '_igv_exhibition_home_image_id', true);
