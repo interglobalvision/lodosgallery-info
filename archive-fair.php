@@ -45,7 +45,7 @@ if (have_posts()) {
     $current_count = $current->post_count;
 
 ?>
-        <div class="grid-item item-s-12 <?php echo $current_count === 1 ? 'item-m-6' : ''; ?> no-gutter margin-bottom-basic">
+        <div class="grid-item item-s-12 <?php echo $current_count === 1 ? 'item-m-6 item-xl-4' : ''; ?> no-gutter margin-bottom-basic">
           <div class="grid-row">
             <h2 class="grid-item margin-bottom-small">
               <?php _e('[:en]Currently on view[:es]Actualmente[:]'); ?>
@@ -122,7 +122,7 @@ if (have_posts()) {
 
     $upcoming_count = $upcoming->post_count;
 ?>
-        <div class="grid-item item-s-12 <?php echo ($current_count === 1) && ($upcoming_count < 4) ? 'item-m-6' : ''; ?> no-gutter margin-bottom-basic">
+        <div class="grid-item item-s-12 <?php echo ($current_count === 1) && ($upcoming_count < 4) ? 'item-m-6 item-xl-8' : ''; ?> no-gutter margin-bottom-basic">
           <div class="grid-row">
             <h2 class="grid-item margin-bottom-small">
               <?php _e('[:en]Upcoming[:es]Próximamente[:]'); ?>
@@ -130,7 +130,7 @@ if (have_posts()) {
           </div>
           <div class="grid-row">
 <?php
-    $classes = ($current_count === 1) && ($upcoming_count < 4) ? 'grid-item item-s-12 item-m-6 margin-bottom-small' : 'grid-item item-s-12 item-m-3 margin-bottom-small';
+    $classes = ($current_count === 1) && ($upcoming_count < 4) ? 'grid-item item-s-12 item-m-6 item-xl-4 margin-bottom-small' : 'grid-item item-s-12 item-m-3 margin-bottom-small';
 
     while ( $upcoming->have_posts() ) {
       $upcoming->the_post();
