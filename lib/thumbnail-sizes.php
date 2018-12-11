@@ -10,4 +10,5 @@ if( function_exists( 'add_image_size' ) ) {
 
   add_image_size( 'gallery', 1200, 9999, false );
   add_image_size( 'archive-thumb', 773, 516, false);
+  add_image_size( 'documentation', 1200, 800, false);
 }

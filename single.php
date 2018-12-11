@@ -54,7 +54,7 @@ if (have_posts()) {
                 echo '<div class="documentation-item margin-bottom-small">';
 
                 if (!empty($item['image_id'])) {
-                  echo wp_get_attachment_image($item['image_id'], 'full');
+                  echo wp_get_attachment_image($item['image_id'], 'documentation');
                 } else if (!empty($item['vimeo_id'])) {
                   echo $item['vimeo_id'];
                 }
