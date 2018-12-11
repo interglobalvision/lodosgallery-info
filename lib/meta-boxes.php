@@ -59,6 +59,12 @@ function igv_cmb_metaboxes() {
       'type' => 'file',
     ) );
 
+    $home_metabox->add_field( array(
+      'name' => esc_html__( 'Image overlay color', 'cmb2' ),
+      'id'   => $prefix . 'home_overlay_color',
+      'type' => 'colorpicker',
+      'default' => '#ffffff',
+    ) );
   }
 
   // EXHIBITION

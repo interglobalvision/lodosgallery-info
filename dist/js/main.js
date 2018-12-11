@@ -111,6 +111,8 @@ var Site = function () {
     key: 'onReady',
     value: function onReady() {
       _lazysizes2.default.init();
+
+      this.homeHover();
     }
   }, {
     key: 'fixWidows',
@@ -120,6 +122,13 @@ var Site = function () {
         var string = $(this).html();
         string = string.replace(/ ([^ ]*)$/, '&nbsp;$1');
         $(this).html(string);
+      });
+    }
+  }, {
+    key: 'homeHover',
+    value: function homeHover() {
+      $('.home-link').hover(function () {
+        $('body.page-home').toggleClass('hover');
       });
     }
   }]);

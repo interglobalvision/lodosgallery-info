@@ -14,6 +14,8 @@ if (have_posts()) {
     the_post();
 
     $default_image = get_post_meta($post->ID, '_igv_home_image_id', true);
+    $overlay_color = get_post_meta($post->ID, '_igv_home_overlay_color', true);
+    $home_link = null;
 
     if (!empty($default_image)) {
       $home_image = $default_image;
@@ -52,10 +54,12 @@ if (have_posts()) {
         $artists = get_post_meta($post->ID, '_igv_exhibition_artist', true);
         $title = get_post_meta($post->ID, '_igv_exhibition_title', true);
 
+        $home_link = get_the_permalink();
+
         if (!empty($artists) || !empty($title)) {
           $group = get_post_meta($post->ID, '_igv_exhibition_group', true);
 
-          echo '<div id="home-text-holder" class="container grid-row align-items-center"><h2 class="grid-item font-size-basic"><a href="' . get_the_permalink() . '">';
+          echo '<div id="home-text-holder" class="container grid-row align-items-center"><h2 class="grid-item font-size-basic"><a href="' . $home_link . '" class="home-link">';
           if (!empty($group)) {
             echo !empty($title) ? $title . '<br>' : '';
             list_artists($artists);
@@ -80,7 +84,10 @@ if (have_posts()) {
 ?>
 
   <div id="home-image-holder" class="container grid-row align-items-center justify-center">
-    <?php echo $home_image !== null ? wp_get_attachment_image($home_image, 'full') : ''; ?>
+    <?php echo !empty($home_link) ? '<a href="' . $home_link . '" class="home-link">' : '<div>'; ?>
+      <?php echo $home_image !== null ? wp_get_attachment_image($home_image, 'full') : ''; ?>
+      <?php echo !empty($overlay_color) ? '<div id="home-image-overlay" style="background-color: ' . $overlay_color . '"></div>' : ''; ?>
+    <?php echo !empty($home_link) ? '</a>' : '</div>'; ?>
   </div>
 
 <?php

@@ -25,6 +25,7 @@ class Site {
   onReady() {
     lazySizes.init();
 
+    this.homeHover();
   }
 
   fixWidows() {
@@ -33,6 +34,12 @@ class Site {
       var string = $(this).html();
       string = string.replace(/ ([^ ]*)$/,'&nbsp;$1');
       $(this).html(string);
+    });
+  }
+
+  homeHover() {
+    $('.home-link').hover(function() {
+      $('body.page-home').toggleClass('hover');
     });
   }
 }
