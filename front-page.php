@@ -22,9 +22,6 @@ if (have_posts()) {
       $home_image = $default_image;
     }
 
-    // The Query
-    $current = new WP_Query( $args );
-
     // The Loop
     if (!empty($home_post)) {
 
