@@ -33,7 +33,7 @@ if (have_posts()) {
       if (!empty($artists) || !empty($title)) {
         $group = get_post_meta($home_post, '_igv_exhibition_group', true);
 
-        echo '<div id="home-text-holder" class="container grid-row align-items-center"><a href="' . $home_link . '" class="home-link grid-item font-size-basic"><h2>';
+        echo '<div id="home-text-holder" class="container grid-row align-items-center"><a href="' . $home_link . '" class="home-hover grid-item font-size-basic"><h2>';
         if (!empty($group)) {
           echo !empty($title) ? $title . '<br>' : '';
           list_artists($artists);
@@ -57,7 +57,7 @@ if (have_posts()) {
 ?>
 
   <div id="home-image-holder" class="container grid-row align-items-center justify-center">
-    <?php echo !empty($home_link) ? '<a href="' . $home_link . '" class="home-link">' : '<div>'; ?>
+    <?php echo !empty($home_link) ? '<a href="' . $home_link . '" class="home-hover">' : '<div class="home-hover">'; ?>
       <?php echo $home_image !== null ? wp_get_attachment_image($home_image, 'full') : ''; ?>
       <?php echo !empty($overlay_color) ? '<div id="home-image-overlay" style="background-color: ' . $overlay_color . '"></div>' : ''; ?>
     <?php echo !empty($home_link) ? '</a>' : '</div>'; ?>

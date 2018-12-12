@@ -47,7 +47,7 @@ class Site {
   }
 
   homeHover() {
-    $('.home-link').hover(function() {
+    $('.home-hover').hover(function() {
       $('body.page-home').toggleClass('hover');
     });
   }
