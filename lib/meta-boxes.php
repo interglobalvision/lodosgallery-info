@@ -213,8 +213,7 @@ function igv_cmb_metaboxes() {
 	    'wpautop' => false, // use wpautop?
 	    'media_buttons' => false, // show insert/upload button(s)
 	    'textarea_rows' => 1, // rows="..."
-	    'teeny' => true, // output the minimal editor config used in Press This
-	    'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+	    'editor_class' => 'cmb2-qtranslate',
   	),
 	) );
 
