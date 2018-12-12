@@ -37,7 +37,7 @@ if (have_posts()) {
               echo !empty($dates) ? '<div class="margin-top-tiny"><span>' . $dates . '</span></div>' : '';
 
               if (!empty($pdf)) {
-                echo '<div class="margin-top-tiny"><a href="' . $pdf . '" class="link-underline">';
+                echo '<div class="margin-top-tiny"><a href="' . $pdf . '" class="link-underline" target="_blank">';
                 _e('[:en]Press Release[:es]Comunicado de prensa[:]');
                 echo '</a></div>';
               }
