@@ -53,6 +53,21 @@ function igv_cmb_metaboxes() {
       'show_on'      => array( 'key' => 'id', 'value' => array($home_page->ID) ),
     ) );
 
+    $example_meta->add_field( array(
+  		'name'      	=> __( 'Exhibition or Fair', 'cmb2' ),
+  		'id'        	=> $prefix . 'home_post',
+  		'type'      	=> 'post_search_ajax',
+  		'desc'			=> __( '(Start typing title)', 'cmb2' ),
+  		// Optional :
+  		'limit'      	=> 1, 		// Limit selection to X items only (default 1)
+  		'sortable' 	 	=> false, 	// Allow selected items to be sortable (default false)
+  		'query_args'	=> array(
+  			'post_type'			=> array( 'exhibition', 'fair' ),
+  			'post_status'		=> array( 'publish' ),
+  			'posts_per_page'	=> -1
+  		)
+  	) );
+
     $home_metabox->add_field( array(
       'name' => esc_html__( 'Default image', 'cmb2' ),
       'id'   => $prefix . 'home_image',
