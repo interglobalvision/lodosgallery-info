@@ -98,11 +98,11 @@ input
   margin-right: auto
   height: 100vh
   pointer-events: none
-  a
+  .home-hover
     pointer-events: auto
 
 #home-text-holder
-  a
+  .home-hover
     display: inline-block
     overflow: visible
     will-change: transform
@@ -110,10 +110,12 @@ input
     transform-origin: center left
     transition: font-size .5s
     backface-visibility: hidden
+    p
+      margin-bottom: 0
 
 #home-image-holder
   z-index: 0
-  .home-link
+  .home-hover
     display: block
     font-size: 0
   img
@@ -133,13 +135,13 @@ input
   opacity: 0
   transition: opacity .5s
 
-.home-link
+.home-hover
   position: relative
 
 body.page-home
   &.hover
     #home-text-holder
-      a
+      .home-hover
         font-size: 40px
     #home-image-overlay
       opacity: 1
