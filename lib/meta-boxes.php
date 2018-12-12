@@ -53,7 +53,7 @@ function igv_cmb_metaboxes() {
       'show_on'      => array( 'key' => 'id', 'value' => array($home_page->ID) ),
     ) );
 
-    $example_meta->add_field( array(
+    $home_metabox->add_field( array(
   		'name'      	=> __( 'Exhibition or Fair', 'cmb2' ),
   		'id'        	=> $prefix . 'home_post',
   		'type'      	=> 'post_search_ajax',
