@@ -3,7 +3,6 @@ get_header();
 ?>
 
 <main id="main-content" class="padding-top-mid margin-bottom-mid">
-  <section id="posts">
     <div class="container">
       <div class="grid-row">
 
@@ -45,7 +44,7 @@ if (have_posts()) {
     $current_count = $current->post_count;
 
 ?>
-        <div class="grid-item item-s-12 <?php echo $current_count === 1 ? 'item-m-6 item-xl-5' : ''; ?> no-gutter margin-bottom-basic">
+        <section class="grid-item item-s-12 <?php echo $current_count === 1 ? 'item-m-6 item-xl-5' : ''; ?> no-gutter margin-bottom-small">
           <div class="grid-row">
             <h2 class="grid-item margin-bottom-small">
               <?php _e('[:en]Currently on view[:es]Actualmente[:]'); ?>
@@ -92,7 +91,7 @@ if (have_posts()) {
     }
 ?>
           </div>
-        </div>
+        </section>
 <?php
   }
 
@@ -122,7 +121,7 @@ if (have_posts()) {
 
     $upcoming_count = $upcoming->post_count;
 ?>
-        <div class="grid-item item-s-12 <?php echo ($current_count === 1) && ($upcoming_count < 4) ? 'item-m-6 item-xl-6 offset-xl-1' : ''; ?> no-gutter margin-bottom-basic">
+        <section class="grid-item item-s-12 <?php echo ($current_count === 1) && ($upcoming_count < 4) ? 'item-m-6 item-xl-6 offset-xl-1' : ''; ?> no-gutter margin-bottom-small">
           <div class="grid-row">
             <h2 class="grid-item margin-bottom-small">
               <?php _e('[:en]Upcoming[:es]Próximamente[:]'); ?>
@@ -169,7 +168,7 @@ if (have_posts()) {
     }
 ?>
           </div>
-        </div>
+        </section>
 <?php
   }
 
@@ -200,7 +199,7 @@ if (have_posts()) {
   if ( $past->have_posts() ) {
     $past_count = $past->post_count;
 ?>
-        <div class="grid-item item-s-12 no-gutter">
+        <section class="grid-item item-s-12 no-gutter">
 <?php
     while ( $past->have_posts() ) {
       $past->the_post();
@@ -218,7 +217,7 @@ if (have_posts()) {
         $year = $expo_year;
 ?>
           <?php echo $current_post_num !== 1 ? '</div></div>' : ''; ?>
-          <div class="margin-bottom-basic">
+          <div class="margin-bottom-small">
             <div class="grid-row">
               <h2 class="grid-item margin-bottom-small">
                 <?php echo $year; ?>
@@ -255,7 +254,7 @@ if (have_posts()) {
 <?php
     }
 ?>
-        </div>
+        </section>
 <?php
   }
 
@@ -263,9 +262,8 @@ if (have_posts()) {
 }
 ?>
 
-      </div>
     </div>
-  </section>
+  </div>
 
 </main>
 
