@@ -53,7 +53,7 @@ if (have_posts()) {
           <div id="documentation" class="margin-top-basic">
             <?php
               foreach ($documentation as $item) {
-                echo '<div class="documentation-item margin-bottom-mid ';
+                echo '<div class="documentation-item margin-bottom-mid text-align-center ';
                 echo $count < $total ? 'documentation-next' : 'documentation-top';
                 echo '">';
 
