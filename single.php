@@ -53,12 +53,20 @@ if (have_posts()) {
           <div id="documentation" class="margin-top-basic">
             <?php
               foreach ($documentation as $item) {
-                echo '<div class="documentation-item margin-bottom-basic text-align-center ';
-                echo $count < $total ? 'documentation-next' : 'documentation-top';
+                $is_caption = empty($item['image_id']) && empty($item['vimeo_id']);
+                $is_last = $count === $total || (empty($documentation[$count]['image_id']) && empty($documentation[$count]['vimeo_id']));
+
+                echo '<div class="documentation-item ';
+                if (!$is_caption) {
+                  echo !$is_last ? 'documentation-scroll documentation-next' : 'documentation-scroll documentation-top';
+                } else {
+                  echo 'documentation-caption';
+                }
+                echo ' margin-bottom-basic text-align-center';
                 echo '">';
 
                 if (!empty($item['image_id'])) {
-                  echo wp_get_attachment_image($item['image_id'], 'documentation');
+                  echo wp_get_attachment_image($item['image_id'], 'full');
                 } else if (!empty($item['vimeo_id'])) {
                   echo $item['vimeo_id'];
                 }
