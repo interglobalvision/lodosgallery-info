@@ -61,12 +61,15 @@ button[type="submit"]
 input
   padding: 0
   border: 0
-  width: 54px
   transition: width 200ms
   cursor: pointer
   appearance: none
   background: transparent
   font-family: $font-sans
+  &.input-en
+    width: 54px
+  &.input-es
+    width: 60px
   &:focus
     outline: none
   &::placeholder

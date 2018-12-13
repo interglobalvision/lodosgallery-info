@@ -37,9 +37,11 @@ get_template_part('partials/seo');
             wp_nav_menu( array(
               'menu' => 'main'
             ) );
+
+            $current_lang = qtranxf_getLanguage();
           ?>
           <form id="mailchimp-form" novalidate="true">
-            <input id="mailchimp-email" type="email" name="EMAIL" placeholder="<?php _e('[:en]Subscribe[:es]Suscríbete[:]'); ?>">
+            <input id="mailchimp-email" type="email" name="EMAIL" placeholder="<?php _e('[:en]Subscribe[:es]Suscríbete[:]'); ?>" class="input-<?php echo $current_lang; ?>">
             <button id="mailchimp-submit" type="submit"><?php _e('[:en]Submit[:es]Enviar[:]'); ?></button>
           </form>
           <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
