@@ -53,20 +53,20 @@ class Site {
   }
 
   bindDocumentation() {
-    if ($('.documentation-item').length) {
+    if ($('.documentation-scroll').length) {
       $('.documentation-item img').on('click', this.advanceDocumentation);
     }
   }
 
   advanceDocumentation(e) {
-    let $parent = $(e.target).parent('.documentation-item');
+    let $parent = $(e.target).parent('.documentation-scroll');
 
     if ($parent.hasClass('documentation-next')) {
-      let $nextItem = $parent.next('.documentation-item');
+      let $nextItem = $parent.next('.documentation-scroll');
       let pos = $nextItem.offset().top + ($nextItem.height() / 2) - ($(window).height() / 2);
       $.scrollTo(pos, 500);
     } else if ($parent.hasClass('documentation-top')) {
-      let $firstItem = $('.documentation-item').first();
+      let $firstItem = $('.documentation-scroll').first();
       let pos = $firstItem.offset().top + ($firstItem.height() / 2) - ($(window).height() / 2);
       $.scrollTo(pos, 1000);
     }

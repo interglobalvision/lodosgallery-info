@@ -145,21 +145,21 @@ var Site = function () {
   }, {
     key: 'bindDocumentation',
     value: function bindDocumentation() {
-      if ($('.documentation-item').length) {
+      if ($('.documentation-scroll').length) {
         $('.documentation-item img').on('click', this.advanceDocumentation);
       }
     }
   }, {
     key: 'advanceDocumentation',
     value: function advanceDocumentation(e) {
-      var $parent = $(e.target).parent('.documentation-item');
+      var $parent = $(e.target).parent('.documentation-scroll');
 
       if ($parent.hasClass('documentation-next')) {
-        var $nextItem = $parent.next('.documentation-item');
+        var $nextItem = $parent.next('.documentation-scroll');
         var pos = $nextItem.offset().top + $nextItem.height() / 2 - $(window).height() / 2;
         $.scrollTo(pos, 500);
       } else if ($parent.hasClass('documentation-top')) {
-        var $firstItem = $('.documentation-item').first();
+        var $firstItem = $('.documentation-scroll').first();
         var _pos = $firstItem.offset().top + $firstItem.height() / 2 - $(window).height() / 2;
         $.scrollTo(_pos, 1000);
       }
