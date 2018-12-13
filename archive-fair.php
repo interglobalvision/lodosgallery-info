@@ -129,7 +129,7 @@ if (have_posts()) {
           </div>
           <div class="grid-row">
 <?php
-    $classes = ($current_count === 1) && ($upcoming_count < 4) ? 'grid-item item-s-12 item-m-6 item-xl-4 margin-bottom-small' : 'grid-item item-s-12 item-m-3 margin-bottom-small';
+    $classes = ($current_count === 1) && ($upcoming_count < 4) ? 'archive-exhibition-item grid-item item-s-12 item-m-6 item-xl-4 margin-bottom-small' : 'archive-exhibition-item grid-item item-s-12 item-m-3 margin-bottom-small';
 
     while ( $upcoming->have_posts() ) {
       $upcoming->the_post();
@@ -227,7 +227,7 @@ if (have_posts()) {
 <?php
       }
 ?>
-              <article <?php post_class('grid-item item-s-12 item-m-4 item-xl-3 margin-bottom-small'); ?> id="post-<?php the_ID(); ?>">
+              <article <?php post_class('archive-exhibition-item grid-item item-s-12 item-m-4 item-xl-3 margin-bottom-small'); ?> id="post-<?php the_ID(); ?>">
 
                 <a href="<?php the_permalink() ?>" class="u-inline-block">
                   <?php the_post_thumbnail('archive-thumb'); ?>
