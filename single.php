@@ -68,7 +68,11 @@ if (have_posts()) {
                 if (!empty($item['image_id'])) {
                   echo wp_get_attachment_image($item['image_id'], 'full');
                 } else if (!empty($item['vimeo_id'])) {
-                  echo $item['vimeo_id'];
+            ?>
+            <div class="u-video-embed-container">
+              <iframe src="https://player.vimeo.com/video/<?php echo $item['vimeo_id']; ?>?color=ffffff&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <?php
                 }
 
 
