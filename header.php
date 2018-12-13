@@ -39,7 +39,7 @@ get_template_part('partials/seo');
             ) );
           ?>
           <form id="mailchimp-form" novalidate="true">
-            <input id="mailchimp-email" type="email" name="EMAIL" placeholder="<?php _e('[:en]Subscribe[:es]Sucríbete[:]'); ?>">
+            <input id="mailchimp-email" type="email" name="EMAIL" placeholder="<?php _e('[:en]Subscribe[:es]Suscríbete[:]'); ?>">
             <button id="mailchimp-submit" type="submit"><?php _e('[:en]Submit[:es]Enviar[:]'); ?></button>
           </form>
           <?php echo qtranxf_generateLanguageSelectCode('text'); ?>
