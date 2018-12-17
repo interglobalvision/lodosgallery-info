@@ -75,8 +75,23 @@ if (have_posts()) {
             <?php
                 }
 
+                $caption = null;
 
-                echo !empty($item['caption']) ? '<div class="documentation-caption">' . apply_filters('the_caption', $item['caption']) . '</div>' : '';
+                if ($current_lang === 'en') {
+                  if (!empty($item['caption_en'])) {
+                    $caption = $item['caption_en'];
+                  } else if (!empty($item['caption_es'])) {
+                    $caption = $item['caption_es'];
+                  }
+                } else {
+                  if (!empty($item['caption_es'])) {
+                    $caption = $item['caption_es'];
+                  } else if (!empty($item['caption_en'])) {
+                    $caption = $item['caption_en'];
+                  }
+                }
+
+                echo !empty($caption) ? '<div class="documentation-caption">' . apply_filters('the_caption', $caption) . '</div>' : '';
 
                 echo '</div>';
 

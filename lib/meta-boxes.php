@@ -227,14 +227,24 @@ function igv_cmb_metaboxes() {
 	) );
 
   $documentation_metabox->add_group_field( $documentation_images_group, array(
-		'name' => esc_html__( 'Caption', 'cmb2' ),
-		'id'   => 'caption',
+		'name' => esc_html__( 'Caption (English)', 'cmb2' ),
+		'id'   => 'caption_en',
 		'type' => 'wysiwyg',
     'options' => array(
 	    'wpautop' => false, // use wpautop?
 	    'media_buttons' => false, // show insert/upload button(s)
 	    'textarea_rows' => 1, // rows="..."
-	    'editor_class' => 'cmb2-qtranslate',
+  	),
+	) );
+
+  $documentation_metabox->add_group_field( $documentation_images_group, array(
+		'name' => esc_html__( 'Caption (Español)', 'cmb2' ),
+		'id'   => 'caption_es',
+		'type' => 'wysiwyg',
+    'options' => array(
+	    'wpautop' => false, // use wpautop?
+	    'media_buttons' => false, // show insert/upload button(s)
+	    'textarea_rows' => 1, // rows="..."
   	),
 	) );
 
