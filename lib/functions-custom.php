@@ -7,7 +7,7 @@ function list_artists($artists, $single = false) {
     $artist_count = count($artists);
     $a = 1;
 
-    if ($artist_count >= 8 && !$single) {
+    if ($artist_count >= 15 && !$single) {
       _e('[:en]group show[:es]exposición colectiva[:]');
     } else {
       foreach ($artists as $artist) {
