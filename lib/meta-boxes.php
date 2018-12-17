@@ -228,7 +228,7 @@ function igv_cmb_metaboxes() {
 
   $documentation_metabox->add_group_field( $documentation_images_group, array(
 		'name' => esc_html__( 'Caption (English)', 'cmb2' ),
-		'id'   => 'caption_en',
+		'id'   => 'caption',
 		'type' => 'wysiwyg',
     'options' => array(
 	    'wpautop' => false, // use wpautop?

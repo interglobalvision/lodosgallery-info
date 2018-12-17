@@ -78,16 +78,16 @@ if (have_posts()) {
                 $caption = null;
 
                 if ($current_lang === 'en') {
-                  if (!empty($item['caption_en'])) {
-                    $caption = $item['caption_en'];
+                  if (!empty($item['caption'])) {
+                    $caption = $item['caption'];
                   } else if (!empty($item['caption_es'])) {
                     $caption = $item['caption_es'];
                   }
                 } else {
                   if (!empty($item['caption_es'])) {
                     $caption = $item['caption_es'];
-                  } else if (!empty($item['caption_en'])) {
-                    $caption = $item['caption_en'];
+                  } else if (!empty($item['caption'])) {
+                    $caption = $item['caption'];
                   }
                 }
 
