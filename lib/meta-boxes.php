@@ -190,7 +190,7 @@ function igv_cmb_metaboxes() {
   $documentation_metabox = new_cmb2_box( array(
  		'id'            => $prefix . 'documentation_metabox',
  		'title'         => esc_html__( 'Documentation', 'cmb2' ),
- 		'object_types'  => array( 'exhibition', 'fair', 'publication' ), // Post type
+ 		'object_types'  => array( 'exhibition', 'fair', 'publication', 'artist' ), // Post type
  	) );
 
   $documentation_images_group = $documentation_metabox->add_field( array(
