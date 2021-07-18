@@ -5,15 +5,18 @@ function add_menu_icons_styles(){
 ?>
 
 <style>
-#menu-posts-exhibition .dashicons-admin-post:before {
+  #menu-posts-exhibition .dashicons-admin-post:before {
     content: '\f128';
-}
-#menu-posts-fair .dashicons-admin-post:before {
+  }
+  #menu-posts-fair .dashicons-admin-post:before {
     content: '\f128';
-}
-#menu-posts-publication .dashicons-admin-post:before {
+  }
+  #menu-posts-publication .dashicons-admin-post:before {
     content: '\f330';
-}
+  }
+  #menu-posts-artist .dashicons-admin-post:before {
+    content: '\f110';
+  }
 </style>
 
 <?php
