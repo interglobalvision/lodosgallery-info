@@ -17,7 +17,7 @@ if (have_posts()) {
   while (have_posts()) {
     the_post();
 ?>
-              <li>
+              <li class="margin-bottom-tiny">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
               </li>
 <?php
