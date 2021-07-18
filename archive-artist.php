@@ -19,7 +19,7 @@ if (have_posts()) {
 ?>
               <li class="margin-bottom-tiny">
                 <a href="<?php the_permalink(); ?>" class="artist-hover"><?php the_title(); ?></a>
-                <div class="artist-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post, 'medium'); ?>')"></div>
+                <div class="artist-image" style="background-image: url('<?php echo get_the_post_thumbnail_url($post, 'archive-thumb'); ?>')"></div>
               </li>
 <?php
   }
