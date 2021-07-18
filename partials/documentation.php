@@ -1,4 +1,5 @@
 <?php
+$current_lang = qtranxf_getLanguage();
 $documentation = get_post_meta($post->ID, '_igv_documentation_group', true);
 
 if (!empty($documentation)) {
