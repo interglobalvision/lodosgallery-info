@@ -185,6 +185,78 @@ function igv_cmb_metaboxes() {
   	),
 	) );
 
+  // ARTIST
+
+  $artist_metabox = new_cmb2_box( array(
+ 		'id'            => $prefix . 'artist_metabox',
+ 		'title'         => esc_html__( 'Details', 'cmb2' ),
+ 		'object_types'  => array( 'artist' ), // Post type
+ 	) );
+
+  $artist_metabox->add_field( array(
+		'name' => esc_html__( 'CV PDF English', 'cmb2' ),
+		'id'   => $prefix . 'cv_pdf_en',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+    'text'    => array(
+  		'add_upload_file_text' => 'Add PDF'
+  	),
+  	// query_args are passed to wp.media's library query.
+  	'query_args' => array(
+  		'type' => 'application/pdf', // Make library only display PDFs.
+  	),
+	) );
+
+  $artist_metabox->add_field( array(
+		'name' => esc_html__( 'CV PDF Español', 'cmb2' ),
+		'id'   => $prefix . 'cv_pdf_es',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+    'text'    => array(
+  		'add_upload_file_text' => 'Add PDF'
+  	),
+  	// query_args are passed to wp.media's library query.
+  	'query_args' => array(
+  		'type' => 'application/pdf', // Make library only display PDFs.
+  	),
+	) );
+
+  $artist_metabox->add_field( array(
+		'name' => esc_html__( 'Press PDF English', 'cmb2' ),
+		'id'   => $prefix . 'press_pdf_en',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+    'text'    => array(
+  		'add_upload_file_text' => 'Add PDF'
+  	),
+  	// query_args are passed to wp.media's library query.
+  	'query_args' => array(
+  		'type' => 'application/pdf', // Make library only display PDFs.
+  	),
+	) );
+
+  $artist_metabox->add_field( array(
+		'name' => esc_html__( 'Press PDF Español', 'cmb2' ),
+		'id'   => $prefix . 'press_pdf_es',
+		'type' => 'file',
+    'options' => array(
+  		'url' => false, // Hide the text input for the url
+  	),
+    'text'    => array(
+  		'add_upload_file_text' => 'Add PDF'
+  	),
+  	// query_args are passed to wp.media's library query.
+  	'query_args' => array(
+  		'type' => 'application/pdf', // Make library only display PDFs.
+  	),
+	) );
+
   // DOCUMENTATION
 
   $documentation_metabox = new_cmb2_box( array(
