@@ -3,6 +3,7 @@ get_header();
 ?>
 
 <main id="main-content" class="padding-top-mid">
+  <div id="artist-image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"></div>
   <section id="<?php echo get_post_type(); ?>">
     <div class="container">
 <?php
