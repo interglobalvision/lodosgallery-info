@@ -18,7 +18,7 @@ if (have_posts()) {
     the_post();
 ?>
               <li class="margin-bottom-tiny">
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                <a href="<?php the_permalink(); ?>" class="artist-hover"><?php the_title(); ?></a>
                 <div class="artist-image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"></div>
               </li>
 <?php
