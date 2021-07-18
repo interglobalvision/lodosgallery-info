@@ -3,7 +3,6 @@ get_header();
 ?>
 
 <main id="main-content" class="padding-top-mid">
-  <div id="artist-image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>')"></div>
   <section id="<?php echo get_post_type(); ?>">
     <div class="container">
 <?php
@@ -24,12 +23,12 @@ if (have_posts()) {
             ?>
               <div class="margin-top-tiny">
                 <?php
-                  if (!empty($cv) {
+                  if (!empty($cv)) {
                 ?>
                   <div><a href="<?php echo $cv; ?>" class="link-underline" target="_blank">CV</a></div>
                 <?php
                   }
-                  if (!empty($press) {
+                  if (!empty($press)) {
                 ?>
                   <div><a href="<?php echo $press; ?>" class="link-underline" target="_blank"><?php
                     _e('[:en]Press[:es]Prensa[:]');
